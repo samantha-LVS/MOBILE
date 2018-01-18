@@ -1,0 +1,53 @@
+/* Menu burger*/
+.burger {
+  Position: absolute;
+  width:24px;
+  height: 4px;
+  background: #FFFFFF;
+}
+
+.burger::before,.burger::after{
+  content:"";
+  display:block;
+}
+
+.burger,burger::before,burger::after{
+  position: absolute;
+  width:24px;
+  height:4px;
+  background: #FFFFFF;
+  -moz-transition:all 0.3s;
+  -o-transition:all 0,3;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.burger::before {
+  margin-top: -8px;
+}
+
+.burger::after {
+  margin-top: 8px;
+}
+
+/*annimation*/
+.burger:hover {
+  /* L'opacite se propagerait aux pseudoelements, donc
+   * on change la background-color
+   */
+  background: #F77705;
+}
+.burger:hover::before {
+  margin-top: 0px;
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.burger:hover::after {
+  margin-top: 0px;
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
